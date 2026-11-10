@@ -394,6 +394,104 @@ footer{padding:84px 0 90px}
 .tcode{display:inline-block;font-size:11.5px;color:var(--red);margin-bottom:8px;letter-spacing:.12em}
 @media (max-width:560px){.tl-wrap{padding-left:30px}.tl-line{left:7px}.steps.tl li::after{left:-28px}.steps.tl li{padding:18px 18px 20px}.scene{height:104px}.mq{margin-top:64px}}
 @media (prefers-reduced-motion:reduce){.rv,.js .steps.tl li{opacity:1;transform:none}.steps.tl li.lit::after{animation:none}.mq-track{animation:none}}
+/* AG-SCENES */.scene .mono{letter-spacing:.08em}
+/* A one window */
+.ag-a .ch{position:absolute;top:50%;font-size:11px;font-weight:600;color:var(--text);background:#1f1f23;border:1px solid var(--line-2);border-radius:100px;padding:3px 10px;white-space:nowrap;transform:translate(-50%,-50%)}
+.ag-a .c0{left:14%;top:26%}.ag-a .c1{left:40%;top:20%}.ag-a .c2{left:70%;top:24%}.ag-a .c3{left:22%;top:76%}.ag-a .c4{left:76%;top:76%}
+.ag-a .one{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%) scale(.6);opacity:0;background:var(--red);color:#fff;font-size:10.5px;border-radius:100px;padding:6px 12px;white-space:nowrap;box-shadow:0 0 0 6px rgba(255,49,49,.18)}
+.ag-a.in .ch{animation:conv 4.5s ease-in-out infinite}
+.ag-a.in .one{animation:oneIn 4.5s ease-in-out infinite}
+@keyframes conv{0%,15%{opacity:1}45%,80%{left:50%;top:56%;opacity:0}100%{opacity:0}}
+@keyframes oneIn{0%,40%{opacity:0;transform:translate(-50%,-50%) scale(.6)}52%,82%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(1)}}
+/* B margin */
+.ag-b{padding:0 18px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.ag-b .lb{font-size:10px;color:var(--muted)}
+.ag-b .est{display:flex;height:34px;border-radius:8px;overflow:hidden;background:#1f1f23}
+.ag-b .est i{display:flex;align-items:center;justify-content:center;height:100%;font-style:normal}
+.ag-b .est b{font-size:9.5px;font-weight:500;color:#fff;white-space:nowrap;overflow:hidden}
+.ag-b .base{width:52%;background:#2E2E33}
+.ag-b .rent{width:30%;background:repeating-linear-gradient(45deg,#3A3A40 0 6px,#2E2E33 6px 12px)}
+.ag-b .mg{width:0;background:var(--red)}
+.ag-b.in .rent{animation:rentOut 5s ease-in-out infinite}
+.ag-b.in .mg{animation:mgIn 5s ease-in-out infinite}
+@keyframes rentOut{0%,20%{width:30%}50%,85%{width:0}100%{width:30%}}
+@keyframes mgIn{0%,20%{width:0}50%,85%{width:30%}100%{width:0}}
+/* C brief */
+.ag-c{display:flex;align-items:center;justify-content:center;gap:10px;padding:0 14px 18px}
+.ag-c .fr{position:relative;flex:1;height:58px;border:2px solid #3A3A40;border-radius:8px;display:flex;align-items:flex-end;padding:6px}
+.ag-c .fr span{font-size:9px;color:var(--muted)}
+.ag-c .ok{position:absolute;right:6px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--red);transform:scale(0)}
+.ag-c .ok::after{content:"";position:absolute;left:6px;top:3px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.ag-c.in .ok{animation:okIn 4.5s ease infinite}
+.ag-c.in .f1 .ok{animation-delay:.5s}.ag-c.in .f2 .ok{animation-delay:1s}
+.ag-c.in .fr{animation:frOn 4.5s ease infinite}
+.ag-c.in .f1{animation-delay:.5s}.ag-c.in .f2{animation-delay:1s}
+@keyframes okIn{0%,10%{transform:scale(0)}20%,85%{transform:scale(1)}100%{transform:scale(0)}}
+@keyframes frOn{0%,10%{border-color:#3A3A40}20%,85%{border-color:rgba(255,49,49,.6)}100%{border-color:#3A3A40}}
+.ag-c .asis{position:absolute;left:0;right:0;bottom:8px;text-align:center;font-size:9.5px;color:var(--muted)}
+/* D deadlines */
+.ag-d .cal{position:absolute;left:16px;right:16px;top:38px;display:grid;grid-template-columns:repeat(14,1fr);gap:4px}
+.ag-d .cal i{height:22px;border-radius:4px;background:#1f1f23}
+.ag-d .cal i:nth-child(1){background:#2E2E33}.ag-d .cal i:nth-child(7){background:#2E2E33}.ag-d .cal i:nth-child(13){background:var(--red-soft);outline:1px solid var(--red)}
+.ag-d .ptr{position:absolute;top:30px;left:16px;width:2px;height:38px;background:var(--red);box-shadow:0 0 8px rgba(255,49,49,.7)}
+.ag-d.in .ptr{animation:ptr 4.5s ease-in-out infinite}
+@keyframes ptr{0%{left:22px}75%,92%{left:calc(100% - 38px)}100%{left:22px}}
+.ag-d .ms{position:absolute;top:72px;font-size:9.5px;color:var(--muted);transform:translateX(-50%)}
+.ag-d .m0{left:calc(16px + 3.5%)}.ag-d .m1{left:47%}.ag-d .m2{left:calc(100% - 36px);color:var(--red)}
+/* E white label */
+.ag-e{display:flex;align-items:center;justify-content:center}
+.ag-e .badge{position:relative;width:150px;height:84px;border-radius:12px;background:#1f1f23;border:1px solid var(--line-2);padding:12px 14px;overflow:hidden}
+.ag-e .badge::before{content:"";position:absolute;left:50%;top:-12px;width:30px;height:18px;margin-left:-15px;border:2px solid #3A3A40;border-radius:6px}
+.ag-e .crew{display:block;font-size:9px;color:var(--muted);margin-top:6px}
+.ag-e .nm{position:relative;display:block;height:20px;margin-top:4px}
+.ag-e .nm b{position:absolute;left:0;top:0;font-size:13.5px;font-weight:800;letter-spacing:.02em;white-space:nowrap}
+.ag-e .n2{color:var(--red);opacity:0}
+.ag-e .bar{position:absolute;left:14px;right:14px;bottom:12px;height:5px;border-radius:5px;background:#2E2E33}
+.ag-e.in .n1{animation:sw1 4.5s ease infinite}.ag-e.in .n2{animation:sw2 4.5s ease infinite}
+@keyframes sw1{0%,30%{opacity:1;transform:none}40%,90%{opacity:0;transform:translateY(-12px)}100%{opacity:1}}
+@keyframes sw2{0%,32%{opacity:0;transform:translateY(12px)}42%,88%{opacity:1;transform:none}100%{opacity:0}}
+/* F no bypass */
+.ag-f svg{position:absolute;inset:0;width:100%;height:100%}
+.ag-f path{fill:none;stroke-width:2.5;stroke-linecap:round}
+.ag-f .ok1,.ag-f .ok2{stroke:#9A9AA2;stroke-dasharray:100;stroke-dashoffset:100}
+.ag-f .no{stroke:var(--red);stroke-dasharray:6 6;opacity:0}
+.ag-f.in .ok1{animation:dr 5s ease infinite}.ag-f.in .ok2{animation:dr 5s ease .5s infinite}
+.ag-f.in .no{animation:noLn 5s ease infinite}
+@keyframes dr{0%{stroke-dashoffset:100}20%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes noLn{0%,45%{opacity:0}55%,90%{opacity:.8}100%{opacity:0}}
+.ag-f .nd{position:absolute;z-index:1;font-size:10px;color:#fff;background:#2E2E33;border:1px solid var(--line-2);border-radius:100px;padding:3px 10px;transform:translate(-50%,-50%);white-space:nowrap}
+.ag-f .n0{left:21%;top:72%}.ag-f .n1{left:50%;top:33%;background:var(--red);border-color:var(--red)}.ag-f .n2{left:79%;top:72%}
+.ag-f .x{position:absolute;z-index:2;left:50%;top:77%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:var(--bg);border:2px solid var(--red);opacity:0;transform:scale(.4)}
+.ag-f .x::before,.ag-f .x::after{content:"";position:absolute;left:4px;top:8px;width:10px;height:2px;background:var(--red);transform:rotate(45deg)}
+.ag-f .x::after{transform:rotate(-45deg)}
+.ag-f.in .x{animation:xIn 5s ease infinite}
+@keyframes xIn{0%,55%{opacity:0;transform:scale(.4)}65%,90%{opacity:1;transform:scale(1)}100%{opacity:0}}
+/* G publication */
+.ag-g .grid{position:absolute;left:16px;top:16px;bottom:16px;width:58%;display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.ag-g .t{border-radius:5px;background:#26262B;transition:filter .4s}
+.ag-g.in .t{animation:blurT 4.5s ease infinite}
+@keyframes blurT{0%,25%{background:#2E2E33}40%,85%{background:repeating-linear-gradient(45deg,#1f1f23 0 4px,#26262B 4px 8px)}100%{background:#2E2E33}}
+.ag-g .lk{position:absolute;left:calc(16px + 29%);top:50%;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;transform:scale(0);box-shadow:0 0 0 6px rgba(255,49,49,.2)}
+.ag-g .lk svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
+.ag-g.in .lk{animation:lkIn 4.5s ease infinite}
+@keyframes lkIn{0%,28%{transform:scale(0)}40%,85%{transform:scale(1)}100%{transform:scale(0)}}
+.ag-g .cap{position:absolute;right:14px;top:50%;width:30%;transform:translateY(-50%);font-size:9.5px;line-height:1.4;color:var(--muted)}
+/* H standards */
+.ag-h{display:flex;align-items:center;gap:18px;padding:0 18px}
+.ag-h .sw{display:grid;grid-template-columns:repeat(2,26px);gap:5px}
+.ag-h .sw i{height:26px;border-radius:6px}
+.ag-h .sw i:nth-child(1){background:#EDEDED}.ag-h .sw i:nth-child(2){background:var(--red)}.ag-h .sw i:nth-child(3){background:#3A3A40}
+.ag-h .sw b{height:26px;border-radius:6px;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.ag-h .ck{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.ag-h .ck li{display:flex;align-items:center;gap:8px}
+.ag-h .ck span{font-size:10px;color:var(--muted)}
+.ag-h .ck i{position:relative;width:16px;height:16px;border-radius:4px;border:2px solid #3A3A40}
+.ag-h .ck i::after{content:"";position:absolute;left:3px;top:0;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) scale(0)}
+.ag-h.in .ck i{animation:ckBox 4.5s ease infinite}.ag-h.in .ck i::after{animation:ckMark 4.5s ease infinite}
+.ag-h.in .k1 i,.ag-h.in .k1 i::after{animation-delay:.6s}.ag-h.in .k2 i,.ag-h.in .k2 i::after{animation-delay:1.2s}
+@keyframes ckBox{0%,10%{background:transparent;border-color:#3A3A40}20%,85%{background:var(--red);border-color:var(--red)}100%{background:transparent;border-color:#3A3A40}}
+@media (max-width:400px){.ag-c{gap:6px;padding:0 10px 18px}.ag-c .fr span{font-size:8px;letter-spacing:.04em}.ag-c .ok{width:15px;height:15px;right:4px;top:4px}.ag-c .ok::after{left:5px;top:2px}}
+@keyframes ckMark{0%,10%{transform:rotate(45deg) scale(0)}20%,85%{transform:rotate(45deg) scale(1)}100%{transform:rotate(45deg) scale(0)}}
 </style>
 </head>
 <body>
@@ -519,22 +617,22 @@ footer{padding:84px 0 90px}
   <h2>Why agencies find us easy to work with</h2>
   <div class="pillars">
     <div class="pl">
-      <span class="n mono">A · One point of contact</span>
+      <div class="scene ag-a" aria-hidden="true"><span class="ch c0">Shoot</span><span class="ch c1">Edit</span><span class="ch c2">Graphics</span><span class="ch c3">Sound</span><span class="ch c4">Streaming</span><span class="one mono">1 producer</span></div><span class="n mono">A · One point of contact</span>
       <h3>All production in one pair of hands</h3>
       <p>Shooting, editing, graphics, sound, streaming and creator integrations are covered by one team. Instead of five vendors you have one, with a single producer as your contact.</p>
     </div>
     <div class="pl">
-      <span class="n mono">B · Margin</span>
+      <div class="scene ag-b" aria-hidden="true"><span class="lb mono">Budget</span><div class="est"><i class="base"></i><i class="rent"><b class="mono">Rental</b></i><i class="mg"><b class="mono">Margin</b></i></div></div><span class="n mono">B · Margin</span>
       <h3>Own equipment, not a rental line in the budget</h3>
       <p>Cameras, lenses, lighting, sound, stabilization, a drone and editing stations are all ours. Rentals don't inflate the budget, and the margin stays with you.</p>
     </div>
     <div class="pl">
-      <span class="n mono">C · Brief</span>
+      <div class="scene ag-c" aria-hidden="true"><div class="fr f0"><span class="mono">Script</span><i class="ok"></i></div><div class="fr f1"><span class="mono">Storyboard</span><i class="ok"></i></div><div class="fr f2"><span class="mono">References</span><i class="ok"></i></div><span class="asis mono">Done to your brief</span></div><span class="n mono">C · Brief</span>
       <h3>We work to your brief</h3>
       <p>If the creative and storyboard already exist, we execute them rather than reinvent them. If development is needed, we add creative and scriptwriting as a separate block.</p>
     </div>
     <div class="pl">
-      <span class="n mono">D · Timing</span>
+      <div class="scene ag-d" aria-hidden="true"><div class="cal"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ptr"></div><span class="ms m0 mono">Brief</span><span class="ms m1 mono">Shoot</span><span class="ms m2 mono">Delivery</span></div><span class="n mono">D · Timing</span>
       <h3>Deadlines are locked before the shoot</h3>
       <p>Crew, schedule and delivery date are agreed in advance. The producer stays in touch with your project manager from brief to delivery.</p>
     </div>
@@ -570,22 +668,22 @@ footer{padding:84px 0 90px}
   <h2>How we work with your client</h2>
   <div class="pillars">
     <div class="pl">
-      <span class="n mono">A · White label</span>
+      <div class="scene ag-e" aria-hidden="true"><div class="badge"><span class="crew mono">CREW</span><span class="nm"><b class="n1">DZENCAMERA</b><b class="n2">YOUR TEAM</b></span><span class="bar"></span></div></div><span class="n mono">A · White label</span>
       <h3>We work under your brand</h3>
       <p>On set and in correspondence we introduce ourselves as part of your team unless agreed otherwise. The client sees one vendor: you.</p>
     </div>
     <div class="pl">
-      <span class="n mono">B · No bypassing</span>
+      <div class="scene ag-f" aria-hidden="true"><span class="nd n0 mono">Us</span><span class="nd n1 mono">You</span><span class="nd n2 mono">Client</span><svg viewBox="0 0 280 120" preserveAspectRatio="none"><path class="ok1" d="M58 84 L140 40"/><path class="ok2" d="M140 40 L222 84"/><path class="no" d="M58 92 L222 92"/></svg><span class="x"></span></div><span class="n mono">B · No bypassing</span>
       <h3>No direct offers</h3>
       <p>We never approach your client with our own services, during the project or after it. We are happy to put this in writing.</p>
     </div>
     <div class="pl">
-      <span class="n mono">C · Publishing</span>
+      <div class="scene ag-g" aria-hidden="true"><div class="grid"><i class="t t0"></i><i class="t t1"></i><i class="t t2"></i><i class="t t3"></i><i class="t t4"></i><i class="t t5"></i></div><span class="lk"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="cap mono">Not without your OK</span></div><span class="n mono">C · Publishing</span>
       <h3>Only with your permission</h3>
       <p>Footage doesn't go into our portfolio or social media without your consent. We sign NDAs, no questions asked.</p>
     </div>
     <div class="pl">
-      <span class="n mono">D · Standards</span>
+      <div class="scene ag-h" aria-hidden="true"><div class="sw"><i></i><i></i><i></i><b>Aa</b></div><ul class="ck"><li class="k0"><i></i><span class="mono">Brand guide</span></li><li class="k1"><i></i><span class="mono">Tone</span></li><li class="k2"><i></i><span class="mono">Approvals</span></li></ul></div><span class="n mono">D · Standards</span>
       <h3>We follow your rules</h3>
       <p>We follow the client's brand guidelines, your tone of voice and your approval flow. We deliver the way your agency does.</p>
     </div>

@@ -726,7 +726,7 @@ footer{padding-bottom:48px}
   </div>
   <div class="legal">
     <div class="legal-logo" aria-label="Dzencamera"><svg viewBox="0 0 800 800" aria-hidden="true"><circle cx="400" cy="400" r="250" fill="none" stroke="#EDEDED" stroke-width="40" stroke-linecap="round" stroke-dasharray="1420 151" transform="rotate(-27.7 400 400)"></circle><circle cx="576.8" cy="223.2" r="46" fill="#FF3131"></circle></svg><div class="word"><span class="dz">DZEN</span><span class="cm">CAMERA</span></div></div>
-    <p>© 2026 Dzencamera. Все права защищены.</p>
+    <p>© 2023–<span data-year>2026</span> Dzencamera. Все права защищены.</p>
   </div>
 </footer>
 
@@ -801,5 +801,6 @@ footer{padding-bottom:48px}
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){layout();tick()});
 })();
 </script>
+<script>(function(){var y=document.querySelector("[data-year]");if(y){var n=new Date().getFullYear();if(n>2026)y.textContent=n}})();</script>
 </body>
 </html>

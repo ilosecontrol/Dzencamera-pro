@@ -502,6 +502,69 @@ footer{padding:84px 0 90px}
 .legal p{margin:0;font-size:12.5px;color:var(--dim)}
 footer{padding-bottom:48px}
 @media (max-width:560px){.legal{flex-direction:column;align-items:flex-start;gap:12px;margin-top:28px}}
+
+/* ===== creators section ===== */
+.cr-lead{color:var(--muted);font-size:clamp(16.5px,1.8vw,18.5px);margin:-16px 0 30px;max-width:60ch}
+.cr .chips{margin:18px 0 0}
+.cr-case{margin-top:18px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:0;background:linear-gradient(120deg,#22090B,#18181B 60%);border:1px solid rgba(255,49,49,.35);border-radius:24px;overflow:hidden}
+.cr-ph{display:grid;grid-template-rows:1fr 1fr;gap:3px;background:#000;min-height:100%}
+.cr-ph img{width:100%;height:100%;object-fit:cover;display:block;min-height:170px}
+.cr-tx{padding:28px 28px 26px;display:flex;flex-direction:column;justify-content:center}
+.cr-tx .tag{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;color:var(--red)}
+.cr-tx .tag i{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 8px rgba(255,49,49,.7);display:block;animation:blink 1.2s ease-in-out infinite}
+.cr-tx h3{font-size:22px;line-height:1.25;margin-bottom:10px}
+.cr-tx p{margin:0 0 12px;color:var(--muted);font-size:16px;max-width:none}
+.cr-tx a{color:var(--text);border-bottom:1px solid rgba(255,49,49,.6)}
+.cr-tx .cr-num{display:flex;align-items:baseline;gap:10px;margin:4px 0 14px}
+.cr-tx .cr-num b{font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--text)}
+.cr-tx .cr-num span{color:var(--muted);font-size:14.5px;line-height:1.3}
+.cr-tx .credit{font-size:12.5px;color:var(--dim);margin:6px 0 0}
+.steps a{color:var(--text);border-bottom:1px solid rgba(255,49,49,.6)}
+/* scene: selection */
+.sc-s svg circle.av{fill:#26262B;stroke:#3A3A40;stroke-width:2}
+.sc-s svg circle.hd{fill:#3A3A40}
+.sc-s .pick circle.av{transition:stroke .3s}
+.sc-s.in .pick circle.av{animation:pick 4.5s ease-in-out infinite}
+.sc-s.in .pick.p2 circle.av{animation-delay:.5s}.sc-s.in .pick.p3 circle.av{animation-delay:1s}
+@keyframes pick{0%,25%{stroke:#3A3A40;fill:#26262B}40%,85%{stroke:#FF3131;fill:rgba(255,49,49,.14)}100%{stroke:#3A3A40;fill:#26262B}}
+.sc-s .scan{fill:none;stroke:#EDEDED;stroke-width:2;stroke-dasharray:4 5;opacity:.5}
+.sc-s.in .scan{animation:scanx 4.5s ease-in-out infinite}
+@keyframes scanx{0%{transform:translateX(0)}50%{transform:translateX(196px)}100%{transform:translateX(0)}}
+/* scene: agreement */
+.sc-g .bb{fill:#26262B}.sc-g .bb.me{fill:rgba(255,49,49,.18);stroke:rgba(255,49,49,.5);stroke-width:1.5}
+.sc-g .ln{stroke:#4a4a52;stroke-width:5;stroke-linecap:round}
+.sc-g .m{opacity:0}
+.sc-g.in .m1{animation:msg 5s ease infinite}.sc-g.in .m2{animation:msg 5s ease .7s infinite}.sc-g.in .m3{animation:msg 5s ease 1.4s infinite}
+@keyframes msg{0%{opacity:0;transform:translateY(8px)}12%,88%{opacity:1;transform:none}100%{opacity:0}}
+.sc-g .ok{opacity:0;transform-origin:236px 92px}
+.sc-g .ok circle{fill:var(--red)}.sc-g .ok path{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.sc-g.in .ok{animation:okp 5s ease 2.1s infinite}
+@keyframes okp{0%{opacity:0;transform:scale(.4)}10%,70%{opacity:1;transform:scale(1)}85%,100%{opacity:0;transform:scale(1)}}
+/* scene: shoot with creator */
+.sc-w .ph{fill:#151517;stroke:#4a4a52;stroke-width:2.5}
+.sc-w .bd{fill:#2E2E33}.sc-w .hd2{fill:#3A3A40}
+.sc-w .vf{fill:none;stroke:rgba(255,255,255,.75);stroke-width:2}
+.sc-w .rd{fill:var(--red)}
+.sc-w.in .rd{animation:blink 1.2s ease-in-out infinite}
+.sc-w .cam rect{fill:#26262B;stroke:#4a4a52;stroke-width:2}.sc-w .cam circle{fill:#111113;stroke:var(--red);stroke-width:2.5}
+.sc-w .beam{fill:rgba(255,49,49,.10)}
+.sc-w.in .cam{animation:camb 4s ease-in-out infinite}
+@keyframes camb{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+/* scene: release and results */
+.sc-r .ax{stroke:#2E2E33;stroke-width:2}
+.sc-r .tk{fill:#2E2E33}
+.sc-r .cv{fill:none;stroke:var(--red);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:300;stroke-dashoffset:300}
+.sc-r .ar{fill:rgba(255,49,49,.12);opacity:0}
+.sc-r .dt{fill:var(--red);opacity:0}
+.sc-r .pb{fill:#26262B;stroke:#4a4a52;stroke-width:2}
+.sc-r.in .cv{animation:cvd 5s ease infinite}
+.sc-r.in .ar{animation:arf 5s ease infinite}
+.sc-r.in .dt{animation:dtf 5s ease infinite}
+@keyframes cvd{0%{stroke-dashoffset:300;opacity:1}55%,90%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes arf{0%,35%{opacity:0}60%,90%{opacity:1}100%{opacity:0}}
+@keyframes dtf{0%,50%{opacity:0}58%,90%{opacity:1}100%{opacity:0}}
+@media (max-width:760px){.cr-case{grid-template-columns:1fr}.cr-ph{grid-template-rows:none;grid-template-columns:1fr 1fr}.cr-ph img{min-height:0;aspect-ratio:3/2}.cr-tx{padding:22px}}
+@media (prefers-reduced-motion:reduce){.cr-tx .tag i{animation:none}.sc-g .m,.sc-g .ok,.sc-r .ar,.sc-r .dt{opacity:1}.sc-r .cv{stroke-dashoffset:0}}
 </style>
 </head>
 <body>
@@ -673,8 +736,47 @@ footer{padding-bottom:48px}
   </div>
 </section>
 
+<section id="creators" class="cr">
+  <span class="kicker mono"><span class="rec"><i></i>04</span> · Блогеры</span>
+  <h2>Работа с&nbsp;блогерами и&nbsp;интеграции полностью на&nbsp;нас</h2>
+  <p class="cr-lead">Ведем работу с&nbsp;инфлюенсерами в&nbsp;проектах ваших клиентов: от&nbsp;шорт-листа до&nbsp;вышедших публикаций и&nbsp;интеграций. Работаем на&nbsp;стороне вашего агентства.</p>
+  <div class="pillars">
+    <div class="pl">
+      <div class="scene sc-s" aria-hidden="true"><svg viewBox="0 0 280 120"><g><circle class="av" cx="44" cy="40" r="17"/><circle class="hd" cx="44" cy="36" r="6"/><path d="M35 51a9 7 0 0 1 18 0" fill="#3A3A40"/></g><g class="pick p1"><circle class="av" cx="92" cy="40" r="17"/><circle class="hd" cx="92" cy="36" r="6"/><path d="M83 51a9 7 0 0 1 18 0" fill="#3A3A40"/></g><g><circle class="av" cx="140" cy="40" r="17"/><circle class="hd" cx="140" cy="36" r="6"/><path d="M131 51a9 7 0 0 1 18 0" fill="#3A3A40"/></g><g><circle class="av" cx="188" cy="40" r="17"/><circle class="hd" cx="188" cy="36" r="6"/><path d="M179 51a9 7 0 0 1 18 0" fill="#3A3A40"/></g><g><circle class="av" cx="236" cy="40" r="17"/><circle class="hd" cx="236" cy="36" r="6"/><path d="M227 51a9 7 0 0 1 18 0" fill="#3A3A40"/></g><g class="pick p3"><circle class="av" cx="44" cy="84" r="17"/><circle class="hd" cx="44" cy="80" r="6"/><path d="M35 95a9 7 0 0 1 18 0" fill="#3A3A40"/></g><g><circle class="av" cx="92" cy="84" r="17"/><circle class="hd" cx="92" cy="80" r="6"/><path d="M83 95a9 7 0 0 1 18 0" fill="#3A3A40"/></g><g><circle class="av" cx="140" cy="84" r="17"/><circle class="hd" cx="140" cy="80" r="6"/><path d="M131 95a9 7 0 0 1 18 0" fill="#3A3A40"/></g><g class="pick p2"><circle class="av" cx="188" cy="84" r="17"/><circle class="hd" cx="188" cy="80" r="6"/><path d="M179 95a9 7 0 0 1 18 0" fill="#3A3A40"/></g><g><circle class="av" cx="236" cy="84" r="17"/><circle class="hd" cx="236" cy="80" r="6"/><path d="M227 95a9 7 0 0 1 18 0" fill="#3A3A40"/></g><rect class="scan" x="22" y="14" width="44" height="96" rx="10"/></svg></div><span class="n mono">A · Шорт-лист</span>
+      <h3>Подборка под&nbsp;бриф</h3>
+      <p>Собираем подборку авторов под&nbsp;ваш бриф, с&nbsp;аудиторией и&nbsp;условиями.</p>
+    </div>
+    <div class="pl">
+      <div class="scene sc-g" aria-hidden="true"><svg viewBox="0 0 280 120"><g class="m m1"><rect class="bb" x="20" y="14" width="140" height="26" rx="13"/><line class="ln" x1="34" y1="27" x2="130" y2="27"/></g><g class="m m2"><rect class="bb me" x="110" y="48" width="140" height="26" rx="13"/><line class="ln" x1="124" y1="61" x2="212" y2="61"/></g><g class="m m3"><rect class="bb" x="20" y="82" width="110" height="26" rx="13"/><line class="ln" x1="34" y1="95" x2="100" y2="95"/></g><g class="ok"><circle cx="236" cy="92" r="15"/><path d="M229 92l5 5 9-10"/></g></svg></div><span class="n mono">B · Договоренности</span>
+      <h3>Переговоры</h3>
+      <p>Ведем переговоры, фиксируем сроки и&nbsp;согласовываем сценарий.</p>
+    </div>
+    <div class="pl">
+      <div class="scene sc-w" aria-hidden="true"><svg viewBox="0 0 280 120"><path class="beam" d="M118 60 L178 22 L178 98 Z"/><rect class="ph" x="176" y="12" width="56" height="96" rx="10"/><circle class="hd2" cx="204" cy="50" r="11"/><path class="bd" d="M186 92a18 16 0 0 1 36 0v6h-36z"/><circle class="rd" cx="188" cy="24" r="4"/><g class="cam"><rect x="52" y="44" width="58" height="34" rx="6"/><rect x="66" y="36" width="20" height="10" rx="3"/><circle cx="104" cy="61" r="11"/></g><path class="vf" d="M20 20v-8h8M260 20v-8h-8M20 100v8h8M260 100v8h-8"/></svg></div><span class="n mono">C · Съемка</span>
+      <h3>Съемка с&nbsp;автором</h3>
+      <p>Снимаем интеграцию с&nbsp;автором нашей командой.</p>
+    </div>
+    <div class="pl">
+      <div class="scene sc-r" aria-hidden="true"><svg viewBox="0 0 280 120"><rect class="pb" x="20" y="18" width="40" height="54" rx="6"/><path d="M28 58l8-9 7 6 9-12" fill="none" stroke="#4a4a52" stroke-width="2.5" stroke-linecap="round"/><line class="ax" x1="76" y1="100" x2="262" y2="100"/><rect class="tk" x="76.0" y="103" width="2" height="5"/><rect class="tk" x="89.3" y="103" width="2" height="5"/><rect class="tk" x="102.6" y="103" width="2" height="5"/><rect class="tk" x="115.9" y="103" width="2" height="5"/><rect class="tk" x="129.2" y="103" width="2" height="5"/><rect class="tk" x="142.5" y="103" width="2" height="5"/><rect class="tk" x="155.8" y="103" width="2" height="5"/><rect class="tk" x="169.1" y="103" width="2" height="5"/><rect class="tk" x="182.4" y="103" width="2" height="5"/><rect class="tk" x="195.7" y="103" width="2" height="5"/><rect class="tk" x="209.0" y="103" width="2" height="5"/><rect class="tk" x="222.3" y="103" width="2" height="5"/><rect class="tk" x="235.6" y="103" width="2" height="5"/><rect class="tk" x="248.9" y="103" width="2" height="5"/><rect class="tk" x="262.2" y="103" width="2" height="5"/><path class="ar" d="M76 96 C110 92 130 80 160 64 S220 30 258 22 L258 100 L76 100 Z"/><path class="cv" d="M76 96 C110 92 130 80 160 64 S220 30 258 22"/><circle class="dt" cx="258" cy="22" r="5"/></svg></div><span class="n mono">D · Отчет</span>
+      <h3>Выход и&nbsp;отчет</h3>
+      <p>Контролируем выход публикаций и&nbsp;сдаем отчет.</p>
+    </div>
+  </div>
+  <ul class="chips"><li>Интеграции в&nbsp;контент автора</li><li>Блогеры на&nbsp;вашем событии</li><li>Контент-день с&nbsp;несколькими авторами</li><li>Амбассадоры на&nbsp;долгий срок</li></ul>
+  <div class="cr-case">
+    <div class="cr-ph"><img src="case-gta-crowd.webp" alt="Гости в полночь запуска GTA 6 в Arena Pro снимают на телефоны" loading="lazy" width="1188" height="793"><img src="case-gta-creators.webp" alt="Создатели контента на ивенте в Arena Pro" loading="lazy" width="1188" height="793"></div>
+    <div class="cr-tx">
+      <span class="tag mono"><i></i>Кейс · 18.11.2026</span>
+      <h3>Ночь запуска GTA 6 в&nbsp;<a href="https://www.instagram.com/arenapro.ar/" target="_blank" rel="noopener">Arena Pro</a></h3>
+      <div class="cr-num"><b>~150</b><span>гостей: блогеры, стримеры и&nbsp;создатели контента</span></div>
+      <p>Вместе с&nbsp;Arena Pro встретили в&nbsp;Буэнос-Айресе полночь выхода GTA 6. Мы&nbsp;пригласили авторов, вели с&nbsp;ними всю коммуникацию и&nbsp;снимали событие.</p>
+      <p class="credit">Фото: Андрей Виноградов</p>
+    </div>
+  </div>
+</section>
+
 <section>
-  <span class="kicker mono"><span class="rec"><i></i>04</span> · Правила</span>
+  <span class="kicker mono"><span class="rec"><i></i>05</span> · Правила</span>
   <h2>Как мы&nbsp;работаем с&nbsp;вашим клиентом</h2>
   <div class="pillars">
     <div class="pl">
@@ -701,7 +803,7 @@ footer{padding-bottom:48px}
 </section>
 
 <section>
-  <span class="kicker mono"><span class="rec"><i></i>05</span> · Процесс</span>
+  <span class="kicker mono"><span class="rec"><i></i>06</span> · Процесс</span>
   <h2>Как запускаемся</h2>
   <div class="tl-wrap"><div class="tl-line" aria-hidden="true"><i class="tl-fill"></i><i class="tl-head"></i></div><ol class="steps tl">
     <li><span class="tcode mono">Сцена 01</span><div><h3>Бриф от&nbsp;вас</h3><p>Задача, формат, площадки, дедлайн и&nbsp;рамка бюджета. Если есть сценарий и&nbsp;раскадровка, работаем по&nbsp;ним.</p></div></li>
@@ -720,7 +822,7 @@ footer{padding-bottom:48px}
       <a class="cbtn wa" href="https://wa.me/5491172302477" target="_blank" rel="noopener">
         <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span class="cl"><small>WhatsApp</small>+54 9 11 7230-2477</span></a>
       <a class="cbtn ig" href="https://www.instagram.com/dzencamera.studio/" target="_blank" rel="noopener">
-        <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></span><span class="cl"><small>Instagram</small>@dzencamera.studio</span></a>
+        <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></span><span class="cl"><small>Instagram · новый аккаунт</small>@dzencamera.studio</span></a>
     </div>
     <p class="geo">Работаем по&nbsp;всей Аргентине и&nbsp;выезжаем за&nbsp;ее&nbsp;пределы.<br>Берем проекты на&nbsp;экспорт: снимаем для&nbsp;зарубежных заказчиков.</p>
   </div>

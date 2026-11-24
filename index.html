@@ -565,6 +565,25 @@ footer{padding-bottom:48px}
 @keyframes dtf{0%,50%{opacity:0}58%,90%{opacity:1}100%{opacity:0}}
 @media (max-width:760px){.cr-case{grid-template-columns:1fr}.cr-ph{grid-template-rows:none;grid-template-columns:1fr 1fr}.cr-ph img{min-height:0;aspect-ratio:3/2}.cr-tx{padding:22px}}
 @media (prefers-reduced-motion:reduce){.cr-tx .tag i{animation:none}.sc-g .m,.sc-g .ok,.sc-r .ar,.sc-r .dt{opacity:1}.sc-r .cv{stroke-dashoffset:0}}
+
+/* ===== case gallery ===== */
+.cr-gal{position:relative;background:#000;overflow:hidden;min-height:100%}
+.cr-track{position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.cr-track::-webkit-scrollbar{display:none}
+.cr-track figure{flex:0 0 100%;margin:0;scroll-snap-align:start;scroll-snap-stop:always;position:relative}
+.cr-track img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;min-height:0}
+.cr-gal::after{content:"";position:absolute;left:0;right:0;bottom:0;height:64px;background:linear-gradient(0deg,rgba(0,0,0,.55),rgba(0,0,0,0));pointer-events:none}
+.cr-nav{position:absolute;z-index:2;top:50%;width:42px;height:42px;margin-top:-21px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(10,10,11,.55);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:background .2s,opacity .2s;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.cr-nav:hover{background:var(--red);border-color:var(--red)}
+.cr-nav:disabled{opacity:0;pointer-events:none}
+.cr-nav svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.cr-nav.prev{left:12px}.cr-nav.next{right:12px}
+.cr-dots{position:absolute;z-index:2;left:0;right:0;bottom:14px;display:flex;justify-content:center;gap:7px}
+.cr-dots button{width:7px;height:7px;border-radius:7px;border:0;padding:0;background:rgba(255,255,255,.45);cursor:pointer;transition:width .25s,background .25s}
+.cr-dots button[aria-current]{width:20px;background:var(--red)}
+.cr-cnt{position:absolute;z-index:2;right:14px;top:12px;font-size:11px;color:#fff;background:rgba(10,10,11,.55);border-radius:100px;padding:3px 9px}
+@media (max-width:760px){.cr-gal{aspect-ratio:3/2;min-height:0}.cr-nav{width:36px;height:36px;margin-top:-18px}}
+@media (hover:none){.cr-nav{display:none}}
 </style>
 </head>
 <body>
@@ -764,7 +783,7 @@ footer{padding-bottom:48px}
   </div>
   <ul class="chips"><li>Integraciones en el contenido del creador</li><li>Creadores en tu evento</li><li>Jornada de contenido con varios creadores</li><li>Embajadores a largo plazo</li></ul>
   <div class="cr-case">
-    <div class="cr-ph"><img src="case-gta-crowd.webp" alt="Invitados filmando con el celular la medianoche del lanzamiento de GTA 6 en Arena Pro" loading="lazy" width="1188" height="793"><img src="case-gta-creators.webp" alt="Creadores de contenido en el evento de Arena Pro" loading="lazy" width="1188" height="793"></div>
+    <div class="cr-gal" data-gal role="region" aria-roledescription="carousel" aria-label="Fotos del evento" tabindex="0"><div class="cr-track"><figure><img src="case/01.webp" alt="Banner de Noche Cero en Arena Pro" width="1500" height="1000" decoding="async"></figure><figure><img src="case/02.webp" alt="Set del stream: luces, consola y pantalla con la cuenta regresiva" width="1500" height="1000" loading="lazy" decoding="async"></figure><figure><img src="case/03.webp" alt="El equipo de Dzencamera en la consola del stream" width="1500" height="1000" loading="lazy" decoding="async"></figure><figure><img src="case/04.webp" alt="Monitor de cámara durante la transmisión en vivo" width="1500" height="1000" loading="lazy" decoding="async"></figure><figure><img src="case/05.webp" alt="Creadores en el stream" width="1500" height="1000" loading="lazy" decoding="async"></figure><figure><img src="case/06.webp" alt="Invitados de la noche" width="1500" height="1000" loading="lazy" decoding="async"></figure><figure><img src="case/07.webp" alt="Invitados en la zona de fotos" width="1500" height="1000" loading="lazy" decoding="async"></figure><figure><img src="case/08.webp" alt="Set del DJ" width="1500" height="1000" loading="lazy" decoding="async"></figure></div><button type="button" class="cr-nav prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="cr-nav next" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button><span class="cr-cnt mono">01 / 08</span><div class="cr-dots"></div></div>
     <div class="cr-tx">
       <span class="tag mono"><i></i>Caso · 18.11.2026</span>
       <h3>Noche de lanzamiento de GTA 6 en <a href="https://www.instagram.com/arenapro.ar/" target="_blank" rel="noopener">Arena&nbsp;Pro</a></h3>
@@ -904,5 +923,23 @@ footer{padding-bottom:48px}
 })();
 </script>
 <script>(function(){var y=document.querySelector("[data-year]");if(y){var n=new Date().getFullYear();if(n>2026)y.textContent=n}})();</script>
+<script>
+(function(){document.querySelectorAll('[data-gal]').forEach(function(g){
+  var t=g.querySelector('.cr-track'),fs=t.querySelectorAll('figure'),dots=g.querySelector('.cr-dots'),cnt=g.querySelector('.cr-cnt'),pv=g.querySelector('.prev'),nx=g.querySelector('.next'),n=fs.length,cur=-1;
+  var p2=function(x){return (x<10?'0':'')+x};
+  fs.forEach(function(f,i){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label',(i+1)+' / '+n);b.addEventListener('click',function(){go(i)});dots.appendChild(b)});
+  var bs=dots.querySelectorAll('button');
+  function go(i){t.scrollTo({left:i*t.clientWidth,behavior:'smooth'})}
+  function upd(){var i=Math.round(t.scrollLeft/Math.max(1,t.clientWidth));if(i===cur)return;cur=i;
+    bs.forEach(function(b,k){if(k===i)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current')});
+    cnt.textContent=p2(i+1)+' / '+p2(n);pv.disabled=i<=0;nx.disabled=i>=n-1;
+    var im=fs[i+1]&&fs[i+1].querySelector('img');if(im)im.loading='eager'}
+  pv.addEventListener('click',function(){go(Math.max(0,cur-1))});nx.addEventListener('click',function(){go(Math.min(n-1,cur+1))});
+  t.addEventListener('scroll',function(){window.requestAnimationFrame(upd)},{passive:true});
+  addEventListener('resize',function(){var c=cur;cur=-1;t.scrollLeft=c*t.clientWidth;upd()});
+  g.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(Math.min(n-1,cur+1))}if(e.key==='ArrowLeft'){e.preventDefault();go(Math.max(0,cur-1))}});
+  upd();
+})})();
+</script>
 </body>
 </html>
